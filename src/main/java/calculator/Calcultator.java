@@ -6,11 +6,11 @@ import java.util.Set;
 public class Calcultator {
 
     public int add(int opG, int opD){
-        return opG+opD;
+        return opG + opD;
     }
 
     public int divide(int opG, int opD){
-        return opG /opD;
+        return opG / opD;
     }
 
     public Set<Integer> ensembleChiffre(int pNombre){
