@@ -7,6 +7,6 @@ public class Calcultator {
     }
 
     public int divide(int opG, int opD){
-        return opG/opD;
+        return opG /opD;
     }
 }

@@ -156,4 +156,15 @@ class CalcultatorTest {
         int somme = calculator.add(a, b);
         assertEquals(resultatAttendu, somme);
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-6, -3, 2", // -6 / -3 = 2
+            "-6, 3, -2", // -6 / 3 = -2
+            "6, 3, 2"    // 6 / 3 = 2
+    })
+    void test_function_divide(int a, int b, int resultatAttendu) {
+        int division = calculator.divide(a, b);
+        assertEquals(resultatAttendu, division);
+    }
 }
