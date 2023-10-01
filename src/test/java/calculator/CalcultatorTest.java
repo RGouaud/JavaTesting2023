@@ -1,5 +1,6 @@
 package calculator;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.InstanceOfAssertFactories.throwable;
@@ -7,11 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 class CalcultatorTest {
-    private Calcultator calculator = new Calcultator();
+
+    private final Calcultator calculator = new Calcultator();
 
     // ADD
     @Test
-    void should_it_add_2_positivs(){
+    void should_it_add_2_positives(){
         //GIVEN
         int opG = 2;
         int opD = 3;
@@ -22,7 +24,7 @@ class CalcultatorTest {
     }
 
     @Test
-    void should_it_add_1_positiv_and_one_negative(){
+    void should_it_add_1_positive_and_one_negative(){
         //GIVEN
         int opG = 2;
         int opD = -3;
@@ -32,7 +34,7 @@ class CalcultatorTest {
         assertEquals(-1, resultat);
     }
     @Test
-    void should_it_add_2_negativs_number(){
+    void should_it_add_2_negatives_number(){
         //GIVEN
         int opG = -2;
         int opD = -3;
@@ -43,7 +45,7 @@ class CalcultatorTest {
     }
 
     @Test
-    void should_it_add_1_positiv_and_a_null(){
+    void should_it_add_1_positive_and_a_null(){
         //GIVEN
         int opG = 2;
         int opD = 0;
@@ -78,7 +80,7 @@ class CalcultatorTest {
 
     //DIVIDE
     @Test
-    void should_it_divide_2_positivs(){
+    void should_it_divide_2_positives(){
         //GIVEN
         int opG = 6;
         int opD = 2;
@@ -134,8 +136,7 @@ class CalcultatorTest {
         Throwable exceptionCapturee = assertThrows(Throwable.class, () -> {
             calculator.divide(opG, opD);
         });
-
-        // Vous pouvez maintenant vérifier la exceptionCapturée
+        
         assertNotNull(exceptionCapturee);
         assertEquals("/ by zero", exceptionCapturee.getMessage());
         //THEN
