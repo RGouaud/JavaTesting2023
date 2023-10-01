@@ -2,6 +2,8 @@ package calculator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.InstanceOfAssertFactories.throwable;
 import static org.junit.jupiter.api.Assertions.*;
@@ -136,9 +138,22 @@ class CalcultatorTest {
         Throwable exceptionCapturee = assertThrows(Throwable.class, () -> {
             calculator.divide(opG, opD);
         });
-        
+
         assertNotNull(exceptionCapturee);
         assertEquals("/ by zero", exceptionCapturee.getMessage());
         //THEN
+    }
+
+
+    @ParameterizedTest
+    @CsvSource({
+            "1, 2, 3",   // 1 + 2 = 3
+            "5, 3, 8",   // 5 + 3 = 8
+            "0, 0, 0",   // 0 + 0 = 0
+            "-1, -1, -2" // -1 + (-1) = -2
+    })
+    void test_function_add(int a, int b, int resultatAttendu) {
+        int somme = calculator.add(a, b);
+        assertEquals(resultatAttendu, somme);
     }
 }
