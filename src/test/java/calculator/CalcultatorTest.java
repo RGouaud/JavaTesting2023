@@ -1,14 +1,14 @@
 package calculator;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.assertj.core.api.InstanceOfAssertFactories.throwable;
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
 class CalcultatorTest {
 
     private final Calcultator calculator = new Calcultator();
@@ -166,5 +166,23 @@ class CalcultatorTest {
     void test_function_divide(int a, int b, int resultatAttendu) {
         int division = calculator.divide(a, b);
         assertEquals(resultatAttendu, division);
+    }
+
+
+    @ParameterizedTest
+    @CsvSource({
+            "123456789, '1,2,3,4,5,6,7,8,9'",
+            "112233, '1,2,3'", // doublons
+            "-667, '6,7'", // négatif
+            "76354, '7,6,3,5,4'" // ordre random
+    })
+    void test_function_ensembleChiffre(int given, String attendu) {
+        Set<Integer> resultat = calculator.ensembleChiffre(given);
+        String[] attenduArray = attendu.split(",");
+        Set<Integer> attenduSet = new HashSet<>();
+        for (String str : attenduArray) {
+            attenduSet.add(Integer.parseInt(str.trim()));
+        }
+        assertEquals(attenduSet, resultat);
     }
 }
