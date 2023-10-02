@@ -23,7 +23,7 @@ test {
 	testLogging {
 		events "passed", "skipped", "failed"
 	}
-	finalizedBy(jacocoTestReport)
+	finalizedBy jacocoTestReport
 }
 
 
@@ -32,3 +32,17 @@ jacocoTestReport {
 		xml.required = true
 	}
 }
+
+
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			limit {
+				minimum = 1 // Pourcentage de couverture minimum des methodes, en décimal
+			}
+		}
+
+	}
+}
+
