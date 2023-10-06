@@ -5,7 +5,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class PersonnageTest {
     @Test
@@ -69,10 +68,9 @@ class PersonnageTest {
             "8, 'Est'",
             "9, 'Sud'",
             "10, 'Ouest'",
-            "11, 'Nord"
+            "11, 'Nord'",
     })
-    @Test
-    void orientation_Nord(int fois, String attendu){
+    void orientation_Generalise(int fois, String attendu){
         // GIVEN
         Personnage perso = new Personnage();
         // WHEN
