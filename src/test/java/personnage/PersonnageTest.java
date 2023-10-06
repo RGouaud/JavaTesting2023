@@ -1,6 +1,8 @@
 package personnage;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -55,6 +57,27 @@ class PersonnageTest {
         //WHEN
         String resultat = perso.orientation(fois);
         //THEN
+        assertThat(resultat).isEqualTo(attendu);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "4, 'Est'",
+            "5, 'Sud'",
+            "6, 'Ouest'",
+            "7, 'Nord'",
+            "8, 'Est'",
+            "9, 'Sud'",
+            "10, 'Ouest'",
+            "11, 'Nord"
+    })
+    @Test
+    void orientation_Nord(int fois, String attendu){
+        // GIVEN
+        Personnage perso = new Personnage();
+        // WHEN
+        String resultat = perso.orientation(fois);
+
         assertThat(resultat).isEqualTo(attendu);
     }
 }
