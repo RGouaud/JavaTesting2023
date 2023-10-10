@@ -9,6 +9,10 @@ public class ArabicToRoman {
             arabicNumber -= 10;
             romanNumber += "X";
         }
+        if(arabicNumber==5){
+            arabicNumber -= 5;
+            romanNumber += "V";
+        }
         while(arabicNumber <=3 && arabicNumber >0){
             arabicNumber -= 1;
             romanNumber += "I";
