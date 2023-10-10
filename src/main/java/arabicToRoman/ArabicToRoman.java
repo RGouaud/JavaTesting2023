@@ -2,15 +2,16 @@ package arabicToRoman;
 
 public class ArabicToRoman {
     public String convert(int arabicNumber){
-        if(arabicNumber == 1) {
-            return "I";
+
+        String romanNumber = "";
+
+        while(arabicNumber <=3 && arabicNumber >0){
+            arabicNumber -= 1;
+            romanNumber += "I";
         }
-        if(arabicNumber == 2){
-            return "II";
+        if(romanNumber.isEmpty()){
+            return null;
         }
-        if(arabicNumber == 3){
-            return "III";
-        }
-        return null;
+        return romanNumber;
     }
 }
