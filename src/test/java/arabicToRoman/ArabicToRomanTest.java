@@ -1,15 +1,17 @@
 package arabicToRoman;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArabicToRomanTest {
+    ArabicToRoman convertisseur;
+    @BeforeEach
+    void start(){convertisseur = new ArabicToRoman();}
     @Test
     void return_null(){
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(0);
         //Then
@@ -18,8 +20,6 @@ class ArabicToRomanTest {
 
     @Test
     void conversion_1(){
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(1);
         //Then
@@ -28,8 +28,6 @@ class ArabicToRomanTest {
 
     @Test
     void conversion_2() {
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(2);
         //Then
@@ -37,8 +35,6 @@ class ArabicToRomanTest {
     }
     @Test
     void conversion_3() {
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(3);
         //Then
@@ -47,8 +43,6 @@ class ArabicToRomanTest {
 
     @Test
     void conversion_10(){
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(10);
         //Then
@@ -57,8 +51,6 @@ class ArabicToRomanTest {
 
     @Test
     void conversion_20() {
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(20);
         //Then
@@ -66,8 +58,6 @@ class ArabicToRomanTest {
     }
     @Test
     void conversion_30() {
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(30);
         //Then
@@ -76,8 +66,6 @@ class ArabicToRomanTest {
 
     @Test
     void conversion_11(){
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(11);
         //Then
@@ -86,8 +74,6 @@ class ArabicToRomanTest {
 
     @Test
     void conversion_12(){
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(12);
         //Then
@@ -96,8 +82,6 @@ class ArabicToRomanTest {
 
     @Test
     void conversion_13(){
-        //Given
-        ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(13);
         //Then
