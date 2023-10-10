@@ -11,7 +11,7 @@ class ArabicToRomanTest {
         //Given
         ArabicToRoman convertisseur = new ArabicToRoman();
         //When
-        String romanNumber = convertisseur.convert(1);
+        String romanNumber = convertisseur.convert(0);
         //Then
         assertThat(romanNumber).isEqualTo(null);
     }
