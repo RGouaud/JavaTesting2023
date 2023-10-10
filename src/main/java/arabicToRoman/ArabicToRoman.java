@@ -8,6 +8,9 @@ public class ArabicToRoman {
         if(arabicNumber == 2){
             return "II";
         }
+        if(arabicNumber == 3){
+            return "III";
+        }
         return null;
     }
 }

@@ -17,7 +17,7 @@ class ArabicToRomanTest {
     }
 
     @Test
-    void convertion_1(){
+    void conversion_1(){
         //Given
         ArabicToRoman convertisseur = new ArabicToRoman();
         //When
@@ -27,12 +27,21 @@ class ArabicToRomanTest {
     }
 
     @Test
-    void convertion_2() {
+    void conversion_2() {
         //Given
         ArabicToRoman convertisseur = new ArabicToRoman();
         //When
         String romanNumber = convertisseur.convert(2);
         //Then
         assertThat(romanNumber).isEqualTo("II");
+    }
+    @Test
+    void conversion_3() {
+        //Given
+        ArabicToRoman convertisseur = new ArabicToRoman();
+        //When
+        String romanNumber = convertisseur.convert(3);
+        //Then
+        assertThat(romanNumber).isEqualTo("III");
     }
 }
