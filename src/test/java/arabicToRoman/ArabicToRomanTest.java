@@ -73,4 +73,34 @@ class ArabicToRomanTest {
         //Then
         assertThat(romanNumber).isEqualTo("XXX");
     }
+
+    @Test
+    void conversion_11(){
+        //Given
+        ArabicToRoman convertisseur = new ArabicToRoman();
+        //When
+        String romanNumber = convertisseur.convert(11);
+        //Then
+        assertThat(romanNumber).isEqualTo("XI");
+    }
+
+    @Test
+    void conversion_12(){
+        //Given
+        ArabicToRoman convertisseur = new ArabicToRoman();
+        //When
+        String romanNumber = convertisseur.convert(12);
+        //Then
+        assertThat(romanNumber).isEqualTo("XII");
+    }
+
+    @Test
+    void conversion_13(){
+        //Given
+        ArabicToRoman convertisseur = new ArabicToRoman();
+        //When
+        String romanNumber = convertisseur.convert(13);
+        //Then
+        assertThat(romanNumber).isEqualTo("XIII");
+    }
 }
