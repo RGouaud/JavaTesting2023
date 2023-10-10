@@ -5,6 +5,10 @@ public class ArabicToRoman {
 
         String romanNumber = "";
 
+        while(arabicNumber <=30 && arabicNumber>=10){
+            arabicNumber -= 10;
+            romanNumber += "X";
+        }
         while(arabicNumber <=3 && arabicNumber >0){
             arabicNumber -= 1;
             romanNumber += "I";
