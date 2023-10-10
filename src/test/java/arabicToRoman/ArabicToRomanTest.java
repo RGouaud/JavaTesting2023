@@ -8,10 +8,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArabicToRomanTest {
     ArabicToRoman convertisseur;
+
     @BeforeEach
-    void start(){convertisseur = new ArabicToRoman();}
+    void start() {
+        convertisseur = new ArabicToRoman();
+    }
+
     @Test
-    void return_null(){
+    void return_null() {
         //When
         String romanNumber = convertisseur.convert(0);
         //Then
@@ -19,7 +23,7 @@ class ArabicToRomanTest {
     }
 
     @Test
-    void conversion_1(){
+    void conversion_1() {
         //When
         String romanNumber = convertisseur.convert(1);
         //Then
@@ -33,6 +37,7 @@ class ArabicToRomanTest {
         //Then
         assertThat(romanNumber).isEqualTo("II");
     }
+
     @Test
     void conversion_3() {
         //When
@@ -42,7 +47,7 @@ class ArabicToRomanTest {
     }
 
     @Test
-    void conversion_10(){
+    void conversion_10() {
         //When
         String romanNumber = convertisseur.convert(10);
         //Then
@@ -56,6 +61,7 @@ class ArabicToRomanTest {
         //Then
         assertThat(romanNumber).isEqualTo("XX");
     }
+
     @Test
     void conversion_30() {
         //When
@@ -65,7 +71,7 @@ class ArabicToRomanTest {
     }
 
     @Test
-    void conversion_11(){
+    void conversion_11() {
         //When
         String romanNumber = convertisseur.convert(11);
         //Then
@@ -73,7 +79,7 @@ class ArabicToRomanTest {
     }
 
     @Test
-    void conversion_12(){
+    void conversion_12() {
         //When
         String romanNumber = convertisseur.convert(12);
         //Then
@@ -81,10 +87,25 @@ class ArabicToRomanTest {
     }
 
     @Test
-    void conversion_13(){
+    void conversion_13() {
         //When
         String romanNumber = convertisseur.convert(13);
         //Then
         assertThat(romanNumber).isEqualTo("XIII");
+    }
+
+    @Test
+    void conversion_5() {
+        //When
+        String romanNumber = convertisseur.convert(5);
+        //Then
+        assertThat(romanNumber).isEqualTo("V");
+    }
+    @Test
+    void conversion_15() {
+        //When
+        String romanNumber = convertisseur.convert(15);
+        //Then
+        assertThat(romanNumber).isEqualTo("XV");
     }
 }
