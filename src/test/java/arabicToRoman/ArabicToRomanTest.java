@@ -108,4 +108,18 @@ class ArabicToRomanTest {
         //Then
         assertThat(romanNumber).isEqualTo("XV");
     }
+    @Test
+    void conversion_4() {
+        //When
+        String romanNumber = convertisseur.convert(4);
+        //Then
+        assertThat(romanNumber).isEqualTo("IV");
+    }
+    @Test
+    void conversion_9() {
+        //When
+        String romanNumber = convertisseur.convert(9);
+        //Then
+        assertThat(romanNumber).isEqualTo("IX");
+    }
 }
