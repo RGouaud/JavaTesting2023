@@ -25,4 +25,14 @@ class ArabicToRomanTest {
         //Then
         assertThat(romanNumber).isEqualTo("I");
     }
+
+    @Test
+    void convertion_2() {
+        //Given
+        ArabicToRoman convertisseur = new ArabicToRoman();
+        //When
+        String romanNumber = convertisseur.convert(2);
+        //Then
+        assertThat(romanNumber).isEqualTo("II");
+    }
 }
