@@ -2,6 +2,8 @@ package arabicToRoman;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -121,5 +123,21 @@ class ArabicToRomanTest {
         String romanNumber = convertisseur.convert(9);
         //Then
         assertThat(romanNumber).isEqualTo("IX");
+    }
+
+
+    @ParameterizedTest
+    @CsvSource({
+            "24,'XXIV'",
+            "26,'XXVI'",
+            "17,'XVII'",
+            "168, 'CLXVIII'",
+            "4999, 'MMMMCMXCIX'",
+    })
+    void generalisation(int arabic, String resultat){
+        //When
+        String romanNumber = convertisseur.convert(arabic);
+        //Then
+        assertThat(romanNumber).isEqualTo(resultat);
     }
 }
