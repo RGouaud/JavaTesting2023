@@ -8,13 +8,21 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArabicToRomanTest {
     @Test
     void return_null(){
-        //given
+        //Given
         ArabicToRoman convertisseur = new ArabicToRoman();
-
         //When
         String romanNumber = convertisseur.convert(1);
-
         //Then
         assertThat(romanNumber).isEqualTo(null);
+    }
+
+    @Test
+    void convertion_1(){
+        //Given
+        ArabicToRoman convertisseur = new ArabicToRoman();
+        //When
+        String romanNumber = convertisseur.convert(1);
+        //Then
+        assertThat(romanNumber).isEqualTo("I");
     }
 }
